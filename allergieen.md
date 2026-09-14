@@ -33,7 +33,12 @@ bespreken we samen wat mogelijk is.
 <section class="cta">
   <h2>Twijfel je of iets mogelijk is?</h2>
   <p>
-    Mail ons op <a href="mailto:{{ site.email }}">{{ site.email }}</a> — we
-    denken graag mee over de beste oplossing voor jouw feest.
+    {% if site.email and site.email != "" %}
+      Mail ons op <a href="mailto:{{ site.email }}">{{ site.email }}</a> — we
+      denken graag mee over de beste oplossing voor jouw feest.
+    {% else %}
+      Binnenkort kan je ons hier rechtstreeks bereiken — hou deze pagina in
+      de gaten.
+    {% endif %}
   </p>
 </section>

@@ -1,6 +1,6 @@
-# Lotte's ditjes en datjes — website
+# Lottes ditjes en datjes — website
 
-De website van Lotte's ditjes en datjes, gebouwd met **Jekyll** en gehost
+De website van Lottes ditjes en datjes, gebouwd met **Jekyll** en gehost
 via **GitHub Pages**. Dit bestand legt uit hoe alles in elkaar zit, zodat
 je de site zelf kan begrijpen en aanpassen.
 

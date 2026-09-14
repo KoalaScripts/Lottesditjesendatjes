@@ -2,7 +2,7 @@
 # Site settings
 # These values are available everywhere in templates as `site.xxx`
 # -----------------------------------------------------------------------
-title: "Lotte's ditjes en datjes"
+title: "Lottes ditjes en datjes"
 tagline: "Voor iedereen wat lekkers"
 description: >-
   Voor iedereen wat lekkers. Binnenkort: ambachtelijke taarten en gebak op
@@ -18,8 +18,11 @@ image: /assets/images/logo-social.png
 # on the homepage automatically falls back to a plain mailto link instead.
 formspree_id: ""
 
-# Contact e-mail used for the mailto fallback and footer.
-email: "info@lottesditjesendatjes.be"
+# Contact e-mail — leave empty for now (not set up yet). Once you have one,
+# fill it in here and mailto links/text appear automatically across the
+# site (footer, homepage signup fallback, about & allergies pages) —
+# no template changes needed.
+email: ""
 
 # Jekyll applies the "minima" theme by default when no theme is set, which
 # would silently add its own unused CSS/layouts to the build. We write all

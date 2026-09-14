@@ -28,4 +28,9 @@ Zo kan straks iedereen aan tafel meegenieten, zonder compromissen op smaak.
 ## Contact
 
 Heb je een vraag over onze werkwijze, of wil je gewoon eens kennismaken?
+{% if site.email and site.email != "" %}
 Mail gerust naar <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+{% else %}
+Hou deze pagina in het oog — onze contactgegevens volgen hier zodra we
+klaar zijn om te starten.
+{% endif %}

@@ -3,10 +3,12 @@
     <p>
       &copy; {{ 'now' | date: "%Y" }} {{ site.title }} — binnenkort volledig open.
     </p>
-    <p>
-      Vragen? Mail naar
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-    </p>
+    {% if site.email and site.email != "" %}
+      <p>
+        Vragen? Mail naar
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
+    {% endif %}
     {% include social.html %}
   </div>
 </footer>
