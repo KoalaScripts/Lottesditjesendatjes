@@ -20,12 +20,28 @@
   --color-yellow: #f0cb6e;
   --color-purple: #a99bc7;
 
+  /* Diepere tinten (goede leesbaarheid op lichte achtergronden: iconen/tekst) */
+  --color-pink-deep: #d97590;
+  --color-green-deep: #6f9f61;
+  --color-yellow-deep: #c9a03e;
+  --color-blue-deep: #5f95a6;
+  --color-purple-deep: #8570a8;
+
+  /* Heel lichte tinten voor blob-achtergronden en badges */
+  --tint-pink: #fbe4ec;
+  --tint-green: #e6f2e0;
+  --tint-yellow: #fdf1d7;
+  --tint-blue: #e3eff3;
+  --tint-purple: #ede7f3;
+
   --color-primary: var(--color-coral);
   --color-primary-dark: var(--color-coral-dark);
   --color-accent: var(--color-yellow);
 
   --max-width: 960px;
   --font-heading: "Quicksand", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-script: "Pacifico", cursive;
+  --font-hand: "Caveat", cursive;
 }
 
 
@@ -39,6 +55,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -154,80 +171,280 @@ a {
   color: var(--color-text);
 }
 
-/* Coming soon section ---------------------------------------------------- */
+/* Hero / coming soon section ---------------------------------------------- */
 
-.coming-soon {
-  text-align: center;
+.hero {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  overflow: hidden;
+  padding: 1.5rem 1.5rem 4rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 640px;
   margin: 0 auto;
-  padding: 2.5rem 0 3rem;
+  text-align: center;
+  animation: hero-fade-in 0.8s ease-out both;
+}
+
+.hero-logo {
+  width: 220px;
+  max-width: 55vw;
+  height: auto;
+  margin-bottom: 1rem;
+  animation: hero-logo-in 0.9s ease-out both;
+}
+
+.hero-title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--color-pink-deep);
+  margin: 0 0 0.75rem;
+  line-height: 1;
+}
+
+.heart-accent {
+  color: var(--color-pink);
+}
+
+.hero-intro {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin: 0 0 0.75rem;
+}
+
+.hero-motto {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-pink-deep);
+  margin: 0 0 2rem;
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-logo-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Decorative corner blobs with handwritten notes (hidden on small screens) - */
+
+.hero-blob {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  width: 230px;
+  min-height: 160px;
+  padding: 1.25rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  pointer-events: none;
+  animation: hero-drift 8s ease-in-out infinite;
+}
+
+.hero-blob__heart {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.hero-blob--pink {
+  top: 0;
+  left: 2%;
+  background: var(--tint-pink);
+  color: var(--color-pink-deep);
+  border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+}
+
+.hero-blob--green {
+  top: 0;
+  right: 2%;
+  background: var(--tint-green);
+  color: var(--color-green-deep);
+  border-radius: 58% 42% 37% 63% / 40% 55% 45% 60%;
+  animation-delay: 1.5s;
+}
+
+.hero-blob--blue {
+  bottom: 6%;
+  left: 3%;
+  background: var(--tint-blue);
+  color: var(--color-blue-deep);
+  border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  animation-delay: 3s;
+}
+
+.hero-blob--yellow {
+  bottom: 6%;
+  right: 3%;
+  background: var(--tint-yellow);
+  color: var(--color-yellow-deep);
+  border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%;
+  animation-delay: 4.5s;
+}
+
+@keyframes hero-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, -10px); }
+}
+
+@media (min-width: 900px) {
+  .hero-blob {
+    display: flex;
+  }
+}
+
+/* Scattered confetti dots (hidden on small screens) ------------------------ */
+
+.confetti-dot {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: hero-drift 6s ease-in-out infinite;
+}
+
+.confetti-dot--sm {
+  width: 9px;
+  height: 9px;
+}
+
+.confetti-dot--pink { background: var(--color-pink); }
+.confetti-dot--green { background: var(--color-green); }
+.confetti-dot--blue { background: var(--color-blue); }
+.confetti-dot--yellow { background: var(--color-yellow); }
+.confetti-dot--purple { background: var(--color-purple); }
+
+.confetti-dot-1 { top: 6%; left: 32%; animation-delay: 0.5s; }
+.confetti-dot-2 { top: 12%; right: 30%; animation-delay: 2s; }
+.confetti-dot-3 { top: 36%; left: 14%; animation-delay: 3.5s; }
+.confetti-dot-4 { top: 55%; right: 16%; animation-delay: 1s; }
+.confetti-dot-5 { top: 72%; left: 24%; animation-delay: 2.5s; }
+.confetti-dot-6 { top: 20%; left: 44%; animation-delay: 4s; }
+.confetti-dot-7 { top: 64%; right: 36%; animation-delay: 0s; }
+.confetti-dot-8 { top: 44%; right: 44%; animation-delay: 1.5s; }
+
+@media (min-width: 700px) {
+  .confetti-dot {
+    display: block;
+  }
+}
+
+/* Allergen badges ----------------------------------------------------------- */
+
+.allergen-badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.badge {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  width: 100px;
 }
 
-.coming-soon-logo {
-  width: 200px;
-  max-width: 60vw;
-  height: auto;
-  margin-bottom: 1.5rem;
-  animation: float-logo 4s ease-in-out infinite;
+.badge-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
 }
 
-@keyframes float-logo {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-12px) rotate(1deg); }
+.badge:hover .badge-icon {
+  transform: translateY(-3px) scale(1.05);
 }
 
-.motto {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  margin: 0 0 0.5rem;
+.badge-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
 }
 
-.eyebrow {
+.badge--vegan .badge-icon { background: var(--tint-green); color: var(--color-green-deep); }
+.badge--melkvrij .badge-icon { background: var(--tint-pink); color: var(--color-pink-deep); }
+.badge--eivrij .badge-icon { background: var(--tint-yellow); color: var(--color-yellow-deep); }
+.badge--glutenvrij .badge-icon { background: var(--tint-blue); color: var(--color-blue-deep); }
+.badge--meer .badge-icon { background: var(--tint-purple); color: var(--color-purple-deep); }
+
+.allergen-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+
+/* Divider + closing tagline -------------------------------------------------- */
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 auto 0.75rem;
+  max-width: 260px;
+}
+
+.hero-divider span:not(.hero-divider__heart) {
+  height: 1px;
+  flex: 1;
+  background: #ecdfce;
+}
+
+.hero-divider__heart {
+  color: var(--color-pink);
+  font-size: 0.9rem;
+}
+
+.hero-tagline {
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-text-muted);
-  margin: 0 0 0.25rem;
+  margin: 0 0 1.5rem;
 }
 
-.coming-soon h1 {
-  font-size: 2rem;
-  margin: 0 0 1rem;
-  position: relative;
-  display: inline-block;
-}
-
-.coming-soon h1::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 6px;
-  margin: 0.6rem auto 0;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--color-coral),
-    var(--color-pink),
-    var(--color-yellow),
-    var(--color-green),
-    var(--color-blue),
-    var(--color-purple)
-  );
-}
-
-.coming-soon .lead {
-  font-size: 1.1rem;
-  color: var(--color-text);
-  margin: 0 0 2rem;
+.hero-tagline span[aria-hidden] {
+  color: var(--color-pink);
+  letter-spacing: 0;
 }
 
 .signup {
   margin-bottom: 1.5rem;
+}
+
+.signup-title {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin: 0 0 1rem;
 }
 
 .signup-placeholder {
@@ -421,7 +638,10 @@ a {
 /* Respect users who prefer less motion ---------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .coming-soon-logo {
+  .hero-content,
+  .hero-logo,
+  .hero-blob,
+  .confetti-dot {
     animation: none;
   }
 }
