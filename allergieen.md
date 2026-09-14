@@ -6,10 +6,10 @@ permalink: /allergieen/
 
 # Allergieën & diëten
 
-Bij **{{ site.title }}** draait alles om één ding: dat iedereen aan tafel
-kan meegenieten. Daarom houden we bij elke bestelling rekening met
-allergieën en dieetwensen. Hieronder vind je een overzicht van wat we
-kunnen aanbieden.
+Bij **{{ site.title }}** draait alles om één ding: {{ site.tagline | downcase }}.
+Om dat waar te maken, houden we bij elke bestelling rekening met allergieën
+en dieetwensen. Hieronder vind je een overzicht van wat er straks mogelijk
+is.
 
 <div class="allergen-grid">
   {% for allergeen in site.data.allergenen %}
@@ -33,7 +33,7 @@ bespreken we samen wat mogelijk is.
 <section class="cta">
   <h2>Twijfel je of iets mogelijk is?</h2>
   <p>
-    Neem <a href="{{ '/contact/' | relative_url }}">contact</a> op — we denken
-    graag mee over de beste oplossing voor jouw feest.
+    Mail ons op <a href="mailto:{{ site.email }}">{{ site.email }}</a> — we
+    denken graag mee over de beste oplossing voor jouw feest.
   </p>
 </section>

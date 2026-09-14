@@ -1,0 +1,18 @@
+{% assign has_social = false %}
+{% for item in site.data.social %}
+  {% if item.url != "" %}{% assign has_social = true %}{% endif %}
+{% endfor %}
+
+{% if has_social %}
+  <ul class="social-links">
+    {% for item in site.data.social %}
+      {% if item.url != "" %}
+        <li>
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.naam }}">
+            <span aria-hidden="true">{{ item.icoon }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}

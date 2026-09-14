@@ -1,12 +1,12 @@
 <footer class="site-footer">
   <div class="wrapper">
     <p>
-      &copy; {{ 'now' | date: "%Y" }} {{ site.title }} — Ambachtelijke taarten en gebak,
-      aangepast aan jouw allergieën en dieetwensen.
+      &copy; {{ 'now' | date: "%Y" }} {{ site.title }} — binnenkort volledig open.
     </p>
     <p>
-      <a href="{{ '/contact/' | relative_url }}">Contacteer ons</a>
-      voor een offerte op maat.
+      Vragen? Mail naar
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     </p>
+    {% include social.html %}
   </div>
 </footer>

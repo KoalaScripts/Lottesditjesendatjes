@@ -4,42 +4,35 @@ title: Home
 permalink: /
 ---
 
-<section class="hero">
-  <h1>Lekker taart, voor iedereen.</h1>
+<section class="coming-soon">
+  <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="coming-soon-logo">
+
+  <p class="motto">{{ site.tagline }}</p>
+  <p class="eyebrow">Binnenkort</p>
+  <h1>Er wordt iets lekkers gebakken.</h1>
   <p class="lead">
-    Bij <strong>{{ site.title }}</strong> bakken we ambachtelijke taarten en
-    gebak die we volledig afstemmen op allergieën en dieetwensen. Zo kan
-    iedereen op jouw feest meegenieten van een lekker stuk taart, zonder
-    zorgen.
+    {{ site.title }} is in de maak: ambachtelijke taarten en gebak, volledig
+    op maat van allergieën en dieetwensen. Zodat iedereen aan tafel kan
+    meegenieten van een lekker stuk taart, zonder zorgen.
   </p>
-  <div class="hero-actions">
-    <a class="button" href="{{ '/assortiment/' | relative_url }}">Bekijk ons assortiment</a>
-    <a class="button button-secondary" href="{{ '/contact/' | relative_url }}">Vraag een offerte aan</a>
-  </div>
-</section>
 
-<section class="highlights">
-  <div class="highlight">
-    <span class="highlight-icon">🎂</span>
-    <h2>Op maat gebakken</h2>
-    <p>Elke taart wordt individueel bereid, aangepast aan de wensen en noden van jouw gasten.</p>
+  <div class="signup">
+    {% if site.formspree_id and site.formspree_id != "" %}
+      <form action="https://formspree.io/f/{{ site.formspree_id }}" method="POST" class="signup-form">
+        <label for="email" class="visually-hidden">E-mailadres</label>
+        <input type="email" name="email" id="email" placeholder="jouw@email.be" required>
+        <button type="submit">Hou me op de hoogte</button>
+      </form>
+    {% else %}
+      <a class="button" href="mailto:{{ site.email }}?subject=Hou%20me%20op%20de%20hoogte">
+        Hou me op de hoogte
+      </a>
+    {% endif %}
   </div>
-  <div class="highlight">
-    <span class="highlight-icon">🌾</span>
-    <h2>Aandacht voor allergieën</h2>
-    <p>Glutenvrij, lactosevrij, eivrij, notenvrij, sojavrij, suikervrij of veganistisch: het kan allemaal.</p>
-  </div>
-  <div class="highlight">
-    <span class="highlight-icon">💛</span>
-    <h2>Met liefde gemaakt</h2>
-    <p>Zodat niemand aan de kant hoeft te staan tijdens een verjaardag, feest of familiemoment.</p>
-  </div>
-</section>
 
-<section class="cta">
-  <h2>Benieuwd wat er mogelijk is voor jouw dieet?</h2>
-  <p>
-    Bekijk onze <a href="{{ '/allergieen/' | relative_url }}">pagina over allergieën en diëten</a>
-    of neem meteen <a href="{{ '/contact/' | relative_url }}">contact</a> op.
-  </p>
+  <div class="quick-links">
+    <a href="{{ '/over-ons/' | relative_url }}">Over ons</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ '/allergieen/' | relative_url }}">Allergieën &amp; diëten</a>
+  </div>
 </section>

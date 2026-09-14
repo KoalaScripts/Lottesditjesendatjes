@@ -1,0 +1,16 @@
+# Social media links for the footer icon row.
+#
+# There are no accounts yet, so every `url` below is empty on purpose —
+# _includes/social.html only shows an icon when its url is filled in, so
+# right now this section simply stays hidden. As soon as an account
+# exists, paste its full URL here and the icon appears automatically,
+# no HTML changes needed.
+- naam: Instagram
+  icoon: "📷"
+  url: ""
+- naam: Facebook
+  icoon: "📘"
+  url: ""
+- naam: TikTok
+  icoon: "🎵"
+  url: ""
