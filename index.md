@@ -5,12 +5,6 @@ permalink: /
 ---
 
 <section class="coming-soon">
-  <span class="blob blob-pink" aria-hidden="true"></span>
-  <span class="blob blob-blue" aria-hidden="true"></span>
-  <span class="blob blob-yellow" aria-hidden="true"></span>
-  <span class="blob blob-green" aria-hidden="true"></span>
-  <span class="blob blob-purple" aria-hidden="true"></span>
-
   <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="coming-soon-logo">
 
   <p class="motto">{{ site.tagline }}</p>

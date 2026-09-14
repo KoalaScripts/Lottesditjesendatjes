@@ -1,8 +1,8 @@
 /* -------------------------------------------------------------------
    Lottes ditjes en datjes — basisstijl
-   Kleuren gehaald uit het logo, maar feller/verzadigder gemaakt voor wat
-   meer speelsheid (koraal, roze, groen, blauw, geel, paars). Plain CSS,
-   geen preprocessor nodig. Pas kleuren/fonts hieronder aan.
+   Kleuren rechtstreeks overgenomen uit het logo (zachte pastel koraal,
+   roze, salie-groen, stofblauw, mosterdgeel, lavendel). Plain CSS, geen
+   preprocessor nodig. Pas kleuren/fonts hieronder aan.
    ------------------------------------------------------------------- */
 
 :root {
@@ -11,14 +11,14 @@
   --color-text-muted: #8a7d70;
   --color-card-bg: #ffffff;
 
-  /* Felle regenboogpalet, gebaseerd op het logo */
-  --color-coral: #ff8a5c;
-  --color-coral-dark: #e8632f;
-  --color-pink: #ff6f9c;
-  --color-green: #5cb85f;
-  --color-blue: #3fb6d3;
-  --color-yellow: #ffc93c;
-  --color-purple: #a86bd1;
+  /* Pastelpalet uit het logo */
+  --color-coral: #f2a06b;
+  --color-coral-dark: #d9824f;
+  --color-pink: #f0a0b8;
+  --color-green: #9dc48f;
+  --color-blue: #93bfce;
+  --color-yellow: #f0cb6e;
+  --color-purple: #a99bc7;
 
   --color-primary: var(--color-coral);
   --color-primary-dark: var(--color-coral-dark);
@@ -157,7 +157,6 @@ a {
 /* Coming soon section ---------------------------------------------------- */
 
 .coming-soon {
-  position: relative;
   text-align: center;
   max-width: 640px;
   margin: 0 auto;
@@ -165,73 +164,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: visible;
-}
-
-/* Playful floating blobs of colour drifting behind the content */
-.blob {
-  position: absolute;
-  z-index: 0;
-  border-radius: 50%;
-  opacity: 0.35;
-  filter: blur(2px);
-  pointer-events: none;
-  animation: float-blob 7s ease-in-out infinite;
-}
-
-.blob-pink {
-  width: 90px;
-  height: 90px;
-  top: -20px;
-  left: 5%;
-  background: var(--color-pink);
-  animation-delay: 0s;
-}
-
-.blob-blue {
-  width: 70px;
-  height: 70px;
-  top: 40px;
-  right: 8%;
-  background: var(--color-blue);
-  animation-delay: 1.2s;
-}
-
-.blob-yellow {
-  width: 60px;
-  height: 60px;
-  bottom: 10px;
-  left: 12%;
-  background: var(--color-yellow);
-  animation-delay: 2.4s;
-}
-
-.blob-green {
-  width: 50px;
-  height: 50px;
-  bottom: 60px;
-  right: 15%;
-  background: var(--color-green);
-  animation-delay: 3.6s;
-}
-
-.blob-purple {
-  width: 65px;
-  height: 65px;
-  top: 45%;
-  left: -5%;
-  background: var(--color-purple);
-  animation-delay: 4.8s;
-}
-
-@keyframes float-blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(10px, -18px) scale(1.08); }
-}
-
-.coming-soon > * {
-  position: relative;
-  z-index: 1;
 }
 
 .coming-soon-logo {
@@ -489,8 +421,7 @@ a {
 /* Respect users who prefer less motion ---------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .coming-soon-logo,
-  .blob {
+  .coming-soon-logo {
     animation: none;
   }
 }
