@@ -5,16 +5,18 @@
 {% endif %}
 
 <header class="site-header">
-  <div class="wrapper">
+  <div class="wrapper site-header__inner">
     <a class="site-title" href="{{ '/' | relative_url }}">
       <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="site-logo">
-      <span>
-        {{ site.title }}
-        {% if site.tagline %}<small class="site-tagline">{{ site.tagline }}</small>{% endif %}
-      </span>
+      <span>{{ site.title }}</span>
     </a>
 
-    <nav class="site-nav">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-menu">
+      <span class="visually-hidden">Menu</span>
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav-menu">
       <ul>
         {% for item in site.data.navigation %}
           <li>
