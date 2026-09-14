@@ -8,6 +8,11 @@ description: >-
   Zodat iedereen op jouw feest kan genieten van een lekker stuk taart.
 lang: nl
 
+# Jekyll applies the "minima" theme by default when no theme is set, which
+# would silently add its own unused CSS/layouts to the build. We write all
+# HTML/CSS ourselves, so the theme is explicitly disabled here.
+theme: null
+
 # The site is published on GitHub Pages under a custom domain. `dev`
 # branch pushes are built with an overridden --baseurl "/dev" by the
 # GitHub Actions workflow, so this value only applies to the `main`
