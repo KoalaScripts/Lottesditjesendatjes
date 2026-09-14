@@ -33,16 +33,18 @@
   
 
 <header class="site-header">
-  <div class="wrapper">
+  <div class="wrapper site-header__inner">
     <a class="site-title" href="/">
       <img src="/assets/images/logo.png" alt="Lottes ditjes en datjes" class="site-logo">
-      <span>
-        Lottes ditjes en datjes
-        <small class="site-tagline">Voor iedereen wat lekkers</small>
-      </span>
+      <span>Lottes ditjes en datjes</span>
     </a>
 
-    <nav class="site-nav">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-menu">
+      <span class="visually-hidden">Menu</span>
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav-menu">
       <ul>
         
           <li>
@@ -108,8 +110,11 @@ klaar zijn om te starten.</p>
 
   <footer class="site-footer">
   <div class="wrapper">
-    <p>
-      &copy; 2026 Lottes ditjes en datjes — binnenkort volledig open.
+    <p class="site-footer__tagline">
+      Bakken <span aria-hidden="true">&#9829;</span> Delen <span aria-hidden="true">&#9829;</span> Genieten
+    </p>
+    <p class="site-footer__copyright">
+      &copy; 2026 Lottes ditjes en datjes
     </p>
     
     
@@ -121,5 +126,6 @@ klaar zijn om te starten.</p>
 </footer>
 
 
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
