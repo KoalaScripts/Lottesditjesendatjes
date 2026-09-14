@@ -96,11 +96,25 @@
 
     <section class="signup" aria-labelledby="signup-title">
       <h2 id="signup-title">Wil je als eerste op de hoogte zijn?</h2>
-      <form class="signup-form" action="#" method="post">
-        <label class="sr-only" for="email">Jouw e-mailadres</label>
-        <input id="email" name="email" type="email" autocomplete="email"
-               placeholder="Jouw e-mailadres" required>
+      <div id="error-message" class="sib-form-message-panel form-message form-message-error" role="alert">
+        Oeps! Er is iets fout gegaan. Probeer het opnieuw.
+      </div>
+      <div id="success-message" class="sib-form-message-panel form-message form-message-success" role="status">
+        Gelukt! We houden je op de hoogte van onze nieuwigheden! 💌
+      </div>
+      <form id="sib-form" class="signup-form" method="post"
+            action="https://25b178bb.sibforms.com/serve/MUIFAGMNCpPucbPE2zZRcsaTJ0H5_POccJbZ9BctVMc652M2-31gZr6ubUKo4F-7YPhInX7me7-OiyO8EU7vtqmyP00euz2altbixN4bMUckv_H3Qf8zRoNqw06JPxdQxd3atKLRGWSoiXYD9DReaKvL-tJhTxXjVJl2mhJIX3I2Q4lyi-319MS6IYp0va9abxzMMQlZHpbH88GO6g=="
+            data-type="subscription">
+        <label class="sr-only" for="EMAIL">Jouw e-mailadres</label>
+        <input class="input" id="EMAIL" name="EMAIL" type="email" autocomplete="email"
+               placeholder="Jouw e-mailadres" data-required="true" required>
         <button type="submit">Hou me op de hoogte <span>♥</span></button>
+        <label class="signup-consent" for="OPT_IN">
+          <input id="OPT_IN" name="OPT_IN" type="checkbox" value="1" required>
+          <span>Ik wil de nieuwsbrief ontvangen. Uitschrijven kan altijd.</span>
+        </label>
+        <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="locale" value="en">
       </form>
       <p class="form-note">Geen spam, beloofd. ♡</p>
     </section>
@@ -111,5 +125,12 @@
   </section>
 </main>
 
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = "Kies een landcode";
+    window.EMAIL_INVALID_MESSAGE = "Vul een geldig e-mailadres in.";
+    window.REQUIRED_ERROR_MESSAGE = "Vul dit verplichte veld in.";
+    window.GENERIC_INVALID_MESSAGE = "Oeps! Er is iets fout gegaan. Probeer het opnieuw.";
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
