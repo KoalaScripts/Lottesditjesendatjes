@@ -1,5 +1,7 @@
 title: Lottes Ditjes en Datjes
-description: "Voor iedereen wat lekkers."
+description: "Ambachtelijk gebak, taarten, koekjes en sandwiches met aandacht voor allergenen en speciale diëten zoals vegan, melkvrij, eivrij en glutenvrije opties."
 url: "https://lottesditjesendatjes.be"
 baseurl: ""
 markdown: kramdown
+logo: "/assets/images/logo.png"
+hero_image: "/assets/images/bakery-background.png"
