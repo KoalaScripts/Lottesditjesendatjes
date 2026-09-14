@@ -51,6 +51,7 @@ plugins:
 
 # Files/folders Jekyll should not copy into the generated _site output.
 exclude:
+  - assets/images/Design
   - Gemfile
   - Gemfile.lock
   - README.md
