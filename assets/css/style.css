@@ -150,9 +150,16 @@ h1 span {
   height: 42px;
   border: 1.5px solid currentColor;
   border-radius: 50%;
-  font-family: Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 400;
+}
+
+.option .icon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.65;
 }
 
 .option-green { background: var(--green-soft); color: #66876a; }
