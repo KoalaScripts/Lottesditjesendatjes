@@ -19,9 +19,6 @@
   <meta name="twitter:description" content="Lottes Ditjes en Datjes maakt ambachtelijk gebak, taarten, koekjes en sandwiches met aandacht voor allergenen en speciale diëten, waaronder vegan, melkvrij, eivrij en glutenvrije opties.">
   <meta name="twitter:image" content="https://lottesditjesendatjes.be/assets/images/bakery-background.png">
   <title>Allergievriendelijk gebak, taarten en dieetopties | Lottes Ditjes en Datjes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/assets/images/favicons/favicon.ico">
@@ -163,7 +160,7 @@
             </button>
             <label class="signup-consent" for="OPT_IN">
               <input id="OPT_IN" name="OPT_IN" type="checkbox" value="1" required>
-              <span>Ik wil de nieuwsbrief ontvangen. Uitschrijven kan altijd.</span>
+              <span>Ik geef toestemming om mij per e-mail nieuws te sturen. Uitschrijven kan altijd. Lees onze <a href="/privacy/">privacyverklaring</a>.</span>
             </label>
             <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off">
             <input type="hidden" name="locale" value="en">
@@ -179,9 +176,13 @@
     <footer class="mini-footer">
       <span>BAKKEN</span><b>♥</b><span>DELEN</span><b>♥</b><span>GENIETEN</span>
     </footer>
+    <nav class="legal-links" aria-label="Juridische informatie">
+      <a href="/privacy/">Privacy</a>
+    </nav>
   </section>
 </main>
 
+  
   <script>
     window.REQUIRED_CODE_ERROR_MESSAGE = "Kies een landcode";
     window.EMAIL_INVALID_MESSAGE = "Vul een geldig e-mailadres in.";
@@ -189,5 +190,6 @@
     window.GENERIC_INVALID_MESSAGE = "Oeps! Er is iets fout gegaan. Probeer het opnieuw.";
   </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  
 </body>
 </html>
